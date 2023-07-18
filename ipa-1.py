@@ -89,8 +89,9 @@ job_consumption = int(input("Input number of material consumed per job::"))
     
 def material_waste(total_material, material_units, num_jobs, job_consumption):
    
-        answer = total_material - num_jobs*job_consumption  
-        print (answer,material_units)
+        answer = total_material - num_jobs*job_consumption
+        result = str(answer) + material_units
+        return (result)
     
 material_waste(total_material, material_units, num_jobs, job_consumption)
 
