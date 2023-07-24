@@ -40,31 +40,18 @@ def shift_letter(letter, shift):
 letter = str(input("Letter:").upper())
 shift = int(input("Will shift this amount of times:"))
 
-
 def shift_letter(letter, shift):
     
-    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    position = 1
-    counter = 0
-    
     if letter == " ":
-        print("_")
-    else:
-        for x in alphabet:
-            if x == letter:
-                if position+shift >= 26:
-                    return (alphabet[(position+shift)%27])
-                    break
-                else:
-                    return(alphabet[counter+shift])
-                    break
-            else:
-                position+=1
-                counter+=1
-                continue
+        return " "
+        
+    alphabet = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+    current_index = alphabet.index(letter)
+    result_index = (current_index + shift) % 26
+    result = alphabet[result_index]
+    
+    return result
                     
-                 
-
 shift_letter(letter, shift) 
 
 def caesar_cipher(message, shift):
